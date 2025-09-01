@@ -1,3 +1,5 @@
 @props(['active' => false])
 
-<a {{ $attributes }} href="#" style="{{ $active === true ? 'font-weight: bold;' : '' }}">{{ $slot }}</a>
+<a {{ $attributes->class([
+    $active ? 'font-bold underline' : 'font-medium',
+]) }} href="#">{{ $slot }}</a>

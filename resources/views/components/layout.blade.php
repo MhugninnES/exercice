@@ -1,24 +1,3 @@
-{{-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Immobi-lier</title>
-</head>
-<body>
-    <nav>
-        <ul>
-            <x-link-item href='/' :active="Route::currentRouteName() === 'accueil' ? true : false">Accueil</x-link-item>
-            <x-link-item href='/nosbiens' :active="Route::currentRouteName() === 'nosbiens' ? true: false">Nos Biens</x-link-item>
-        </ul>
-    </nav>
-
-    <main>
-        {{ $slot }}
-    </main>
-</body>
-</html> --}}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,10 +31,10 @@
               <div class="hidden sm:ml-6 sm:block">
                 <div class="flex space-x-4">
                   <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-white/5 hover:text-white" -->
-                  <x-link-item href="/" aria-current="page" class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white">Accueil</x-link-item>
-                  <x-link-item href="/nosbiens" aria-current="page" class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white">Nos biens</x-link-item>
-                  <x-link-item href="/admin" aria-current="page" class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white">Dashboard</x-link-item>
-                  <x-link-item href="#" aria-current="page" class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white">Dashboard</x-link-item>
+                  <x-link-item href="/" class="rounded-md bg-gray-900 px-3 py-2 text-sm text-white" :active="Route::currentRouteName() === 'accueil' ? true : false">Accueil</x-link-item>
+                  <x-link-item href="/nosbiens" aria-current="page" class="rounded-md bg-gray-900 px-3 py-2 text-sm text-white" :active="Route::currentRouteName() === 'nosbiens' ? true : false">Nos biens</x-link-item>
+                  <x-link-item href="/admin" aria-current="page" class="rounded-md bg-gray-900 px-3 py-2 text-sm text-white" :active="Route::currentRouteName() === 'admin' ? true : false">Admin</x-link-item>
+                  <x-link-item href="#" aria-current="page" class="rounded-md bg-gray-900 px-3 py-2 text-sm text-white" :active="Route::currentRouteName() === 'dashboard' ? true : false">Dashboard</x-link-item>
                 </div>
               </div>
             </div>
@@ -67,6 +46,9 @@
                   <path d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
               </button>
+            </div>
+            <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                <a class="text-white font-bold" href="/profil">Profil</a>
             </div>
           </div>
         </div>
